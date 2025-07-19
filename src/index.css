@@ -1,0 +1,228 @@
+/* Import Tailwind CSS base styles, including resets and browser normalization */
+@tailwind base;
+/* Import Tailwind CSS component styles for pre-defined classes */
+@tailwind components;
+/* Import Tailwind CSS utility classes for flexible styling */
+@tailwind utilities;
+
+/* Define global styles for the body element */
+body {
+  /* Remove default margins to ensure full control over layout */
+  margin: 0;
+  /* Set a modern, cross-platform font stack for consistent typography */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  /* Enable font smoothing for improved text rendering on macOS and WebKit browsers */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Apply a subtle gradient background for visual depth */
+  background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 50%, #f8faff 100%);
+  /* Fix the background to prevent scrolling with content */
+  background-attachment: fixed;
+  /* Ensure relative positioning for pseudo-elements */
+  position: relative;
+}
+
+/* Add a decorative pseudo-element to the body with subtle SVG patterns */
+body::before {
+  /* Empty content for the pseudo-element */
+  content: '';
+  /* Position the pseudo-element to cover the entire viewport */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Combine multiple SVG background images for a layered effect */
+  background-image: 
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 24 24' fill='none' stroke='rgba(59, 130, 246, 0.03)' stroke-width='1'%3E%3Cpath d='M8 6h13'/%3E%3Cpath d='M8 12h13'/%3E%3Cpath d='M8 18h13'/%3E%3Cpath d='M3 6h.01'/%3E%3Cpath d='M3 12h.01'/%3E%3Cpath d='M3 18h.01'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 24 24' fill='none' stroke='rgba(99, 102, 241, 0.03)' stroke-width='1'%3E%3Cpath d='M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z'/%3E%3Cpath d='M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10z'/%3E%3Cpath d='m2 12 4-2-4-2'/%3E%3Cpath d='m22 12-4-2 4-2'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='70' viewBox='0 0 24 24' fill='none' stroke='rgba(79, 70, 229, 0.03)' stroke-width='1'%3E%3Cpath d='M3 15v4c0 1.1.9 2 2 2h4'/%3E%3Cpath d='M21 15v4c0 1.1-.9 2-2 2h-4'/%3E%3Cpath d='M3 9v-4c0-1.1.9-2 2-2h4'/%3E%3Cpath d='M21 9v-4c0-1.1-.9-2-2-2h-4'/%3E%3C/svg%3E");
+  /* Position the SVG images to create a visually balanced pattern */
+  background-position: 
+    calc(50% - 200px) calc(50% - 150px),
+    calc(50% + 180px) calc(50% + 120px),
+    calc(50% - 100px) calc(50% + 200px);
+  /* Prevent the patterns from repeating */
+  background-repeat: no-repeat;
+  /* Reduce opacity for a subtle effect */
+  opacity: 0.5;
+  /* Disable pointer events to prevent interaction with the pseudo-element */
+  pointer-events: none;
+}
+
+/* Define font styles for code and pre elements to ensure monospaced rendering */
+code, pre {
+  /* Use a monospaced font stack suitable for code display */
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Define styles for elements with a glass-like effect */
+.glass-effect {
+  /* Semi-transparent white background for a frosted glass look */
+  background: rgba(255, 255, 255, 0.85);
+  /* Apply a blur effect to content behind the element */
+  backdrop-filter: blur(12px);
+  /* Subtle border for definition */
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  /* Add a soft shadow for depth */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 
+              0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+/* Define styles for elements with a gradient background */
+.gradient-bg {
+  /* Apply a subtle linear gradient for a clean background */
+  background: linear-gradient(135deg, #f6f8fc 0%, #ffffff 100%);
+  /* Ensure relative positioning for pseudo-elements */
+  position: relative;
+}
+
+/* Add a decorative radial gradient overlay to gradient-bg elements */
+.gradient-bg::before {
+  /* Empty content for the pseudo-element */
+  content: '';
+  /* Position the pseudo-element to cover the parent */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Combine two radial gradients for a subtle effect */
+  background: radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+              radial-gradient(circle at 100% 100%, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
+  /* Disable pointer events to prevent interaction */
+  pointer-events: none;
+}
+
+/* Define styles for code display areas */
+.code-area {
+  /* Dark background for code readability */
+  background: #212121;
+  /* Rounded corners for a modern look */
+  border-radius: 12px;
+  /* Light text color for contrast */
+  color: #eeeff2;
+  /* Add shadow for depth */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  /* Ensure relative positioning for pseudo-elements */
+  position: relative;
+  /* Hide overflow to maintain clean edges */
+  overflow: hidden;
+}
+
+/* Add a decorative top border to code areas */
+.code-area::before {
+  /* Empty content for the pseudo-element */
+  content: '';
+  /* Position the pseudo-element at the top */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* Fixed height for the border */
+  height: 2px;
+  /* Gradient border for visual flair */
+  background: linear-gradient(90deg, #3b82f6, #6366f1);
+  /* Reduce opacity for subtlety */
+  opacity: 0.5;
+}
+
+/* Style pre elements within code areas */
+.code-area pre {
+  /* Remove default margins */
+  margin: 0;
+  /* Add padding for content spacing */
+  padding: 1.25rem;
+}
+
+/* Customize scrollbar appearance for WebKit browsers */
+::-webkit-scrollbar {
+  /* Set width for vertical scrollbars and height for horizontal */
+  width: 8px;
+  height: 8px;
+}
+
+/* Style the scrollbar track */
+::-webkit-scrollbar-track {
+  /* Light background for the track */
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Style the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  /* Gray background for the thumb */
+  background: #cbd5e1;
+  /* Rounded corners for a smooth look */
+  border-radius: 4px;
+}
+
+/* Define hover state for the scrollbar thumb */
+::-webkit-scrollbar-thumb:hover {
+  /* Darker gray on hover for feedback */
+  background: #94a3b8;
+}
+
+/* Define keyframes for a fade-in animation */
+@keyframes fadeIn {
+  /* Start with zero opacity and slight vertical offset */
+  from { opacity: 0; transform: translateY(4px); }
+  /* End with full opacity and no offset */
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Apply fade-in animation to elements with this class */
+.animate-fade-in {
+  /* Use the fadeIn animation with a 0.3s duration and ease-out timing */
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Style tables for consistent rendering */
+table {
+  /* Semi-transparent background for a glass-like effect */
+  background: rgba(255, 255, 255, 0.5);
+  /* Ensure table display behavior */
+  display: table;
+  /* Full width to match container */
+  width: 100%;
+  /* Auto layout to adjust column widths based on content */
+  table-layout: auto;
+}
+
+/* Ensure table header group rendering */
+thead {
+  display: table-header-group;
+}
+
+/* Ensure table body group rendering */
+tbody {
+  display: table-row-group;
+}
+
+/* Ensure table row rendering */
+tr {
+  display: table-row;
+}
+
+/* Ensure table cell rendering for th and td */
+th, td {
+  display: table-cell;
+  /* Ensure visibility */
+  visibility: visible;
+  /* Full opacity */
+  opacity: 1;
+}
+
+/* Style table header rows */
+thead tr {
+  /* Semi-transparent background for headers, overriding other styles */
+  background: rgba(243, 244, 246, 0.8) !important;
+}
+
+/* Style table body rows on hover */
+tbody tr:hover {
+  /* Brighter background on hover for feedback, overriding other styles */
+  background: rgba(255, 255, 255, 0.9) !important;
+}
